@@ -1,4 +1,4 @@
-export const API_KEY = 'AIzaSyAWdwz7nqgq9SmbjtwjzJBfHEYYCrek2fo';
+export const API_KEY = "AIzaSyBfyr2t8h635P-8eKI8Aui2SbiQ2dyo_jo";
 
 export const value_convertor=(value)=>{
     if(value>=1000000)
