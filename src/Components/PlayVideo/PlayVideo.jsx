@@ -60,7 +60,8 @@ const PlayVideo = () => {
       <h3>{apiData ? apiData.snippet.title : "This is Title"}</h3>
       <div className="play-video-info">
         <p>
-          {apiData ? apiData.statistics.viewCount : "NA"} views &bull;{" "}
+          {apiData ? value_convertor(apiData.statistics.viewCount) : "NA"} views
+          &bull;{" "}
           {apiData
             ? moment(apiData.snippet.publishedAt).fromNow()
             : "2 days ago"}
@@ -93,7 +94,9 @@ const PlayVideo = () => {
         <div>
           <p>{apiData ? value_convertor(apiData.snippet.channelTitle) : ""}</p>
           <span>
-            {channelData ? channelData.statistics.subscriberCount : "1M"}
+            {channelData
+              ? value_convertor(channelData.statistics.subscriberCount) 
+              : "1M"} subscribers
           </span>
         </div>
         <button>Subscribe</button>
@@ -108,9 +111,9 @@ const PlayVideo = () => {
         <h4>
           {apiData
             ? value_convertor(apiData.statistics.commentCount)
-            : "102 comments"}
+            : "102 comments"} comments
         </h4>
-        {commentData.map((item,index)=>{
+        {commentData.map((item, index) => {
           return (
             <div key={index} className="comment">
               <img
@@ -135,9 +138,7 @@ const PlayVideo = () => {
               </div>
             </div>
           );
-
         })}
-        
       </div>
     </div>
   );
